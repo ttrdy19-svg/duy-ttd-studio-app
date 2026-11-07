@@ -1,0 +1,64 @@
+/* Việc cần làm ngay: nút đỏ nổi trên cùng màn hình chính (cả khi đang mở mini app), bảng việc + từng bước bấm ở đâu */
+.vn-orb { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 90; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px;
+  border: 0; border-radius: 22px; background: #d6362f; color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 18px #d6362f88; animation: vn-pulse 2s infinite; }
+.vn-orb b { min-width: 22px; padding: 1px 7px; border-radius: 11px; background: #fff; color: #d6362f; }
+@keyframes vn-pulse { 50% { box-shadow: 0 4px 28px #ff5a4fcc; } }
+.vn-panel { position: fixed; top: 66px; left: 50%; transform: translateX(-50%); z-index: 91; width: min(680px, calc(100vw - 32px)); max-height: calc(100vh - 90px); overflow: auto;
+  box-sizing: border-box; padding: 22px 24px; border: 2px solid #d6362f; font-family: 'Be Vietnam Pro', system-ui, 'Segoe UI', sans-serif; font-style: normal; line-height: 1.5; border-radius: 12px; background: #1d1813; color: #efe6d8; box-shadow: 0 12px 40px #000a; }
+.vn-panel h2 { margin: 0 24px 10px 0; font-size: 20px; line-height: 1.4; color: #ffc9c3; }
+.vn-close { position: absolute; right: 12px; top: 12px; display: flex; border: 0; background: transparent; color: inherit; cursor: pointer; }
+.vn-why { margin: 0 0 12px; font-size: 15px; line-height: 1.6; color: #e6dccd; }
+.vn-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.vn-list li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: #2a221a; border-left: 4px solid #d6362f; }
+.vn-list li span { flex: 1; display: flex; flex-direction: column; gap: 4px; font-size: 17px; line-height: 1.5; }
+.vn-list li small { color: #d6cabb; font-size: 15px; line-height: 1.5; }
+.vn-list button, .vn-actions button, .vn-path button { padding: 7px 12px; border-radius: 7px; border: 1px solid #d6362f; background: #d6362f; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.vn-steps { margin: 0 0 12px; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.6; }
+.vn-path { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.vn-path code { flex: 1; min-width: 0; padding: 5px 8px; border-radius: 6px; background: #120f0c; font-size: 12px; word-break: break-all; }
+.vn-path button { display: inline-flex; align-items: center; gap: 4px; padding: 5px 9px; font-size: 12px; }
+.vn-status { margin: 0 0 12px; padding: 10px 12px; list-style: none; border-radius: 8px; background: #120f0c; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.5; }
+.vn-status li { display: flex; align-items: center; gap: 8px; color: #d8cbb8; }
+.vn-status li.ok { color: #7fe0a4; }
+.vn-status .spin { animation: vn-spin 1.2s linear infinite; }
+@keyframes vn-spin { to { transform: rotate(360deg); } }
+.vn-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.vn-actions button:not(.vn-main) { background: transparent; color: #f3d2cd; }
+.vn-main { background: #2f9e5b !important; border-color: #2f9e5b !important; }
+.vn-error { margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #5a1d1a; font-size: 15px; line-height: 1.5; }
+
+/* Việc xong: xanh, giữ nguyên chỗ trong danh sách */
+.vn-orb.xong { background: #2f9e5b; box-shadow: 0 4px 18px #2f9e5b88; animation: none; }
+.vn-orb.xong b { color: #2f9e5b; }
+.vn-count { margin: 0 0 10px; font-size: 15px; color: #e6dccd; }
+.vn-list li.xong { background: #17301f; border-left-color: #2f9e5b; }
+.vn-list li.xong b { color: #8fe3ad; }
+.vn-list button.vn-redo { background: transparent; border-color: #2f9e5b; color: #8fe3ad; }
+
+/* Mở web bằng profile máy: nút xanh dương cạnh nút việc cần làm, bảng tài khoản × trang */
+.mw-orb { left: auto; right: 24px; transform: none; background: #2f6fb3; box-shadow: 0 4px 18px #2f6fb388; animation: none; }
+.mw-panel { left: auto; right: 24px; transform: none; width: min(760px, calc(100vw - 32px)); }
+.mw-link { width: 100%; box-sizing: border-box; margin: 0 0 10px; padding: 8px 10px; border-radius: 7px; border: 1px solid #3a3026; background: #120f0c; color: #efe6d8; font: inherit; font-size: 13px; }
+.vn-list li.mw-row { border-left-color: #2f6fb3; flex-wrap: wrap; }
+.mw-sites { display: flex; flex-wrap: wrap; gap: 6px; }
+.vn-list .mw-sites button { padding: 5px 9px; font-size: 12px; background: #24364d; border-color: #3d5f87; }
+.vn-list .mw-sites button.mw-own { background: #3a2e20; border-color: #6b5a3a; }
+.vn-list .mw-sites button:disabled { opacity: .4; cursor: default; }
+/* Dòng "N tài khoản đang lỗi" + Sổ tài khoản mở ngay trong bảng */
+.vn-list li.vn-loi { border-left-color: #ffb020; }
+.vn-panel.vn-so { width: min(1280px, calc(100vw - 32px)); padding: 0; background: #08101a; }
+.vn-panel.vn-so .hall { height: auto; padding-top: 36px; }
+.vn-panel.vn-so .vn-close { z-index: 2; }
+/* Dòng "N việc chờ chủ tịch duyệt" (Sổ việc chủ tịch) */
+.vn-list li.vn-duyet { border-left-color: #7fd0a8; }
+/* cl-021: mỗi vấn đề một dòng, cả dòng là nút mở popup; chữ to dễ đọc */
+.vn-list li.vn-mo { padding: 0; }
+.vn-list .vn-dong { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 14px; border: 0; border-radius: 8px;
+  background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.vn-list .vn-dong:hover { background: #ffffff0d; }
+.vn-dong b { font-size: 17px; font-weight: 700; line-height: 1.45; color: #fff4ea; }
+.vn-dong .vn-mota { font-size: 15px; line-height: 1.55; color: #ebe1d3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.vn-dong .vn-phu { font-size: 15px; line-height: 1.5; color: #c8b9a6; }
+.vn-list li.vn-loi.cho-kiem { border-left-color: #e8c25c; opacity: .9; }
+.vn-chan { display: flex; gap: 8px; margin: 14px 0 0; }
+.vn-chan button { padding: 8px 14px; border-radius: 7px; border: 1px solid #6b5640; background: transparent; color: #f0e2cc; font: inherit; font-size: 15px; cursor: pointer; }

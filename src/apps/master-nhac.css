@@ -1,0 +1,10 @@
+﻿.master-nhac { padding: 24px; height: 100%; overflow: auto; color: #e9f1ee; background: #172523; }
+.master-nhac fieldset { border: 0; display: flex; align-items: end; flex-wrap: wrap; gap: 12px; padding: 0; }
+.master-nhac label { display: flex; flex-direction: column; gap: 5px; }
+.master-nhac select { max-width: 380px; padding: 8px; background: #263c37; color: inherit; }
+.master-nhac .mn-drop { width: 100%; padding: 22px; border: 1px dashed #90b8ac; border-radius: 10px; }
+.master-nhac button { padding: 9px 14px; margin: 4px; }
+.master-nhac article { padding: 12px; margin-top: 14px; background: #223630; border-radius: 10px; overflow-wrap: anywhere; }
+.master-nhac table { border-collapse: collapse; width: 100%; max-width: 650px; }
+.master-nhac th, .master-nhac td { padding: 8px; border-bottom: 1px solid #49645a; text-align: left; }
+.master-nhac [role=alert] { color: #ffb4a6; }

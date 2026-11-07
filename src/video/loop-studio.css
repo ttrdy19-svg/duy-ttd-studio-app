@@ -1,0 +1,100 @@
+.loop-studio{max-width:1380px;margin:auto;padding:24px;color:#e9dfce;background:radial-gradient(ellipse 70% 40% at 50% 18%,#ffd59a1f,transparent 70%),radial-gradient(ellipse at 10% 30%,#8a2a3a33,transparent 45%),radial-gradient(ellipse at 90% 30%,#8a2a3a33,transparent 45%),linear-gradient(#1a0c10,#120a0d 55%,#0c0709);border-radius:14px}.cinema-title{position:relative;text-align:center;padding:12px 12px 26px}.cinema-title>span{font-size:11px;letter-spacing:.22em;color:#d5b579}.cinema-title h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(24px,3vw,40px);margin:14px 0}.cinema-title p{color:#a1b2b5;font-size:13px;margin-top:18px}.cinema-screen{position:relative;flex:1;min-width:0;background:#000;box-shadow:0 0 0 6px #120609,0 0 60px #ffe7b533,0 26px 60px #000c;border-radius:4px;overflow:hidden}.cinema-screen canvas{display:block;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer}.cinema-screen:fullscreen{display:flex;align-items:center;justify-content:center;border:0;border-radius:0;max-width:none}.cinema-screen:fullscreen canvas{width:auto;height:100%;max-width:100%;object-fit:contain}.cinema-empty{position:absolute;inset:20%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:#09131be8}.cinema-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}.cinema-tools fieldset{min-width:0;margin:0;border:1px solid #425354;border-radius:10px;padding:18px;background:#14262d}.cinema-tools legend{color:#e7c98c;padding:0 8px}.loop-studio label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:#bdcac9;margin:14px 0}.loop-studio label.cinema-tick{flex-direction:row;align-items:center}.cinema-tick input{width:auto!important}.loop-studio input:not([type=checkbox]),.loop-studio select,.loop-studio textarea{width:100%;box-sizing:border-box;padding:9px;border:1px solid #3c555b;border-radius:5px;background:#0e2028;color:#eee2cc}.loop-studio input[type=range]{padding:0;accent-color:#e0c58d}.loop-studio input[type=color]{height:36px;padding:3px}.loop-studio output{color:#e6c683;text-align:right}.loop-studio button{border:1px solid #53635f;border-radius:5px;background:#263d40;color:#e6d4af;padding:10px 14px;cursor:pointer}.loop-studio button:disabled{opacity:.45;cursor:default}.cinema-actions{display:flex;flex-wrap:wrap;gap:7px}.single-background{width:100%;max-height:140px;object-fit:contain;background:#071017;border-radius:5px}.loop-studio p{font-size:12px;line-height:1.6}.cinema-export{margin-top:22px;padding:18px;background:#1d3036;border:1px solid #4d5b53;border-radius:10px;display:flex;align-items:center;flex-wrap:wrap;gap:18px}.cinema-export label{flex:1;min-width:170px}.cinema-export>button{background:#cfaf72;color:#15232a;font-weight:700;min-width:170px}.cinema-export>p{width:100%;margin:0}.cinema-error{padding:14px;background:#422a2b;border:1px solid #9b615c;border-radius:7px}.flow-loop-controls{padding-top:8px;border-top:1px solid #465552}.flow-loop-controls button{margin:6px 5px 6px 0}.cinema-result{display:flex;align-items:center;gap:20px;margin:16px 0}@media(max-width:900px){.cinema-tools{grid-template-columns:1fr}.loop-studio{padding:14px}}
+
+/* Trình xem trước như trình phát video: nút phát giữa khung, thanh điều khiển dưới khung */
+.loop-studio .cinema-play-big{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:78px;height:78px;border-radius:50%;display:grid;place-items:center;padding:0 0 0 5px;background:#000a;border:2px solid #ffffffcc;color:#fff}
+.loop-studio .cinema-play-big:hover{background:#000d}
+.cinema-controls{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:22px 14px 10px;background:linear-gradient(transparent,#000d);opacity:.25;transition:opacity .2s}
+.cinema-screen:hover .cinema-controls,.cinema-controls:focus-within{opacity:1}
+.loop-studio .cinema-controls button{width:34px;height:34px;padding:0;display:grid;place-items:center;border:0;background:transparent;color:#fff}
+.loop-studio .cinema-controls input[type=range]{flex:1;width:auto;accent-color:#e0c58d}
+.cinema-controls span{font-size:12px;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cinema-song{margin:12px 0;padding:10px;border:1px solid #3c555b;border-radius:6px;background:#0e2028}
+/* Quả cầu Thumb: tròn phát sáng góc phải tiêu đề */
+.loop-studio .thumb-orb{position:absolute;right:8px;top:6px;display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:4px;color:#ffe7b5}
+.thumb-orb-sphere{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7df,#f0c574 38%,#8a5a1a 75%,#3b2408);box-shadow:0 0 22px #ffcf7a88,0 0 50px #ffcf7a44;transition:transform .2s,box-shadow .2s}
+.thumb-orb:hover .thumb-orb-sphere{transform:scale(1.07);box-shadow:0 0 30px #ffd98fcc,0 0 70px #ffcf7a66}
+.thumb-orb.working .thumb-orb-sphere{animation:thumb-pulse 1.4s ease-in-out infinite}
+.thumb-orb:not(.ready):not(.working) .thumb-orb-sphere{filter:saturate(.35) brightness(.8)}
+.thumb-orb-label{display:flex;flex-direction:column;font-size:12px;line-height:1.2}.thumb-orb-label small{color:#bfa77a;font-size:10px}
+@keyframes thumb-pulse{50%{box-shadow:0 0 36px #ffe2a8,0 0 80px #ffcf7a99}}
+.thumb-board{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;background:#02060acc;color:#e9dfce;font-family:inherit}
+.thumb-board>section{width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#13232a;border:1px solid #5c6b5f;border-radius:14px;padding:18px 20px;box-shadow:0 30px 80px #000}
+.thumb-board header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.thumb-board h3{margin:0;font:400 22px Georgia,serif;color:#ffe7b5}
+.thumb-board button{border:1px solid #53635f;border-radius:6px;background:#263d40;color:#e6d4af;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.thumb-board button:disabled{opacity:.45;cursor:default}.thumb-board button.primary{background:#cfaf72;color:#15232a;font-weight:700}
+.thumb-board .thumb-close{width:36px;height:36px;padding:0;justify-content:center;border-radius:50%}
+.thumb-board-grid{display:grid;grid-template-columns:2fr .75fr 1fr .85fr 1.3fr;gap:12px;align-items:end}
+.thumb-board figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.thumb-board figure>button{padding:0;border:1px solid #ffe2a833;background:none;border-radius:6px;overflow:hidden;cursor:zoom-in}
+.thumb-board figure.ok>button{border-color:#8fd8b4}.thumb-board figure.bad>button{border-color:#ff8f7f}
+.thumb-board figure img{width:100%;display:block}
+.thumb-empty{display:grid;place-items:center;background:#07121c;border:1px dashed #ffe2a833;border-radius:6px;color:#8d9a9a;font-size:11px;aspect-ratio:16/9}
+.thumb-empty[data-ratio="9:16"]{aspect-ratio:9/16}.thumb-empty[data-ratio="1:1"]{aspect-ratio:1}.thumb-empty[data-ratio="2:3"]{aspect-ratio:2/3}.thumb-empty[data-ratio="4:3"]{aspect-ratio:4/3}
+.thumb-board figcaption{font-size:12px;color:#c9b98c;display:flex;flex-wrap:wrap;align-items:center;gap:6px}.thumb-board figcaption small{color:#f0a7a0;width:100%}
+.thumb-board figcaption button{padding:4px 6px}
+.thumb-board footer{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}
+.thumb-status{color:#e6c683;font-size:13px}.thumb-error{color:#ffb4a8;background:#422a2b;border:1px solid #9b615c;border-radius:6px;padding:8px 10px;font-size:13px}
+@media(max-width:700px){.thumb-board-grid{grid-template-columns:1fr 1fr}}
+
+/* Rạp chiếu bên trong: bảng đèn tên phim, diềm màn nhung, màn nhung hai bên, hàng ghế khán phòng */
+.cinema-marquee{position:relative;display:inline-block;max-width:calc(100% - 190px);padding:20px 38px 22px;border-radius:10px;background:#2a1016;border:2px solid #c99a4f;box-shadow:0 0 0 6px #2a1016,0 0 0 8px #c99a4f66,0 0 40px #ffcf7a44}
+.cinema-marquee::before,.cinema-marquee::after{content:'';position:absolute;left:14px;right:14px;height:8px;background:radial-gradient(circle,#fff1c2 0 2.5px,transparent 3.5px) 0 0/18px 8px repeat-x;filter:drop-shadow(0 0 3px #ffcf7a)}
+.cinema-marquee::before{top:6px}.cinema-marquee::after{bottom:6px}
+.cinema-marquee h2{color:#ffe7b5;text-shadow:0 0 18px #ffcf7a99;margin:10px 0 2px}
+.cinema-marquee>span{animation:cinema-blink 2.4s ease-in-out infinite}
+@keyframes cinema-blink{50%{opacity:.55}}
+.cinema-hall{position:relative;max-width:1260px;margin:0 auto;padding-top:34px}
+.cinema-valance{position:absolute;left:-12px;right:-12px;top:0;height:46px;z-index:2;border-radius:0 0 8px 8px;
+ background:radial-gradient(ellipse 38px 26px at 38px 0,#7a1f30 96%,transparent 100%) 0 18px/76px 30px repeat-x,linear-gradient(#5a1322,#8a2538 70%,#6b1a2a);box-shadow:0 10px 18px #0009;border-bottom:3px solid #c99a4f}
+.cinema-stage{position:relative;display:flex;align-items:stretch;gap:0;padding:14px 0 0}
+.cinema-drape{width:clamp(34px,6vw,86px);flex-shrink:0;background:repeating-linear-gradient(90deg,#3b0c17 0,#8a2538 9px,#a83246 14px,#6b1a2a 21px,#3b0c17 28px);box-shadow:inset -10px 0 18px #0008;border-radius:0 0 40% 0}
+.cinema-drape.right{box-shadow:inset 10px 0 18px #0008;border-radius:0 0 0 40%}
+.cinema-seats{display:flex;flex-direction:column;align-items:center;gap:6px;margin:18px auto 0;padding-bottom:6px;perspective:400px}
+.cinema-seats>div{display:flex;gap:10px}
+.cinema-seats i{width:44px;height:26px;border-radius:12px 12px 4px 4px;background:linear-gradient(#7a2232,#4a1019);box-shadow:inset 0 3px 0 #a8394d,0 4px 6px #000a}
+.cinema-seats>div:nth-child(2) i{width:50px;height:30px}.cinema-seats>div:nth-child(3) i{width:58px;height:34px}
+.loop-studio .cinema-tools fieldset{background:#1d1216;border-color:#5a3a38}.loop-studio .cinema-export{background:#24161a;border-color:#6b4a3e}
+.loop-studio input:not([type=checkbox]),.loop-studio select,.loop-studio textarea{background:#140b0e;border-color:#5a3a38}
+.loop-studio button{background:#3a2226;border-color:#6b4a3e}
+@media(max-width:900px){.cinema-seats i{width:18px;height:14px}.cinema-seats>div{gap:5px}.cinema-marquee{padding:10px 16px}}
+
+/* Tiến trình từng khung thumbnail */
+.thumb-progress{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px;text-align:center;width:100%;box-sizing:border-box}
+.thumb-progress b{color:#ffe2a8;font-size:12px;font-weight:600}.thumb-progress small{color:#9fb0b1;font-size:10.5px;line-height:1.35;word-break:break-word}
+.thumb-progress i{display:block;width:80%;height:4px;border-radius:2px;background:#ffffff14;overflow:hidden}.thumb-progress i span{display:block;height:100%;background:linear-gradient(90deg,#cfaf72,#ffe2a8);transition:width .4s}
+.thumb-progress[data-status=checking] i span{animation:thumb-pulse 1.2s ease-in-out infinite}.thumb-progress[data-status=bad] b,.thumb-progress[data-status=error] b{color:#ffb4a8}.thumb-progress[data-status=done] b{color:#8fd8b4}
+@keyframes thumb-pulse{50%{opacity:.4}}
+
+/* Nút đổi bài dưới bảng hiệu */
+.cinema-title p .cinema-switch{margin-left:12px;padding:4px 10px;font-size:12px;display:inline-flex;align-items:center;gap:5px;vertical-align:middle;border-radius:14px}
+.cinema-empty .primary,.cinema-actions .primary{background:#cfaf72;color:#15232a;font-weight:700}
+
+/* Bàn sửa phụ đề: nằm bên phải, không che màn chiếu */
+.loop-studio.with-srt{margin-right:440px}
+.srt-editor{position:fixed;top:12px;right:12px;bottom:12px;width:420px;z-index:850;display:flex;flex-direction:column;gap:8px;padding:16px;box-sizing:border-box;background:#1a0d11f2;border:1px solid #c99a4f88;border-radius:14px;box-shadow:0 20px 60px #000c;color:#e9dfce;font-size:13px}
+.srt-editor header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.srt-editor header small{color:#d5b579;letter-spacing:.14em;font-size:10px}.srt-editor h3{margin:4px 0 0;font-size:19px;font-weight:600;color:#ffe7b5}
+.srt-editor button{border:1px solid #6b4a3f;border-radius:6px;background:#3a1c22;color:#f0dcb4;padding:6px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-size:12px}
+.srt-editor button:disabled{opacity:.4;cursor:default}.srt-editor button.primary{background:#cfaf72;color:#1d0f12;font-weight:700;border-color:#cfaf72}.srt-editor button[aria-pressed=true]{background:#5a2b33;border-color:#c99a4f}
+.srt-editor .srt-icon{width:24px;height:24px;box-sizing:border-box;padding:0;justify-content:center;border-radius:50%;flex:none}.srt-editor .srt-icon.danger:hover{background:#6b2a2a}
+.srt-editor nav.srt-bar{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;width:auto;height:auto;padding:0;background:none;border:0;position:static}.srt-bar button{flex:none}
+.srt-error{margin:0;color:#ffb4a8;background:#422a2b;border:1px solid #9b615c;border-radius:6px;padding:6px 9px;font-size:12px}.srt-notice{margin:0;color:#bfe7cf;font-size:12px}
+.srt-list{list-style:none;margin:0;padding:0 4px 0 0;overflow-y:auto;overflow-x:hidden;flex:1;display:flex;flex-direction:column;gap:8px}
+.srt-list li{border:1px solid #ffe2a822;border-radius:10px;padding:8px;background:#2a1318}
+.srt-list li.playing{border-color:#ffe2a8;background:#3b1c21;box-shadow:0 0 14px #ffd59a33}
+.srt-row-head{display:flex;align-items:center;gap:3px;min-width:0;margin-bottom:6px}.srt-row-head b{min-width:22px;color:#d5b579;font-size:12px}.srt-row-head>span{color:#8f7c6c}.srt-spacer{flex:1}
+.srt-editor input.srt-time{width:78px;box-sizing:border-box;padding:4px 5px;font:12px ui-monospace,Consolas,monospace;border:1px solid #6b4a3f;border-radius:5px;background:#12080a;color:#ffe7b5}
+.srt-editor textarea{width:100%;box-sizing:border-box;resize:vertical;padding:6px 8px;border:1px solid #6b4a3f;border-radius:6px;background:#12080a;color:#f6ead3;font-family:inherit;font-size:13px;line-height:1.4}
+.srt-raw{flex:1;display:flex;flex-direction:column;gap:8px}.srt-raw textarea{flex:1;font:12px/1.5 ui-monospace,Consolas,monospace}
+.srt-empty{display:flex;flex-direction:column;gap:8px;align-items:flex-start;color:#a99}
+@media(max-width:1100px){.loop-studio.with-srt{margin-right:0}.srt-editor{top:auto;height:55vh;left:12px;width:auto}}
+
+/* Chọn bài để chiếu: mỗi bài một khung */
+.song-shelf{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;background:#02060acc;color:#e9dfce}
+.song-shelf>section{width:min(620px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;padding:18px 20px;background:#1a0d11;border:1px solid #c99a4f88;border-radius:14px;box-shadow:0 30px 80px #000}
+.song-shelf header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}.song-shelf header small{color:#d5b579;letter-spacing:.14em;font-size:10px}.song-shelf h3{margin:4px 0 0;font-size:21px;font-weight:600;color:#ffe7b5}
+.shelf-close{width:36px;height:36px;border-radius:50%;border:1px solid #6b4a3f;background:#3a1c22;color:#f0dcb4;cursor:pointer;display:grid;place-items:center}
+.song-cards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.song-cards button{width:100%;text-align:left;display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid #ffe2a833;border-radius:10px;background:#2a1318;color:#e9dfce;cursor:pointer}
+.song-cards button:hover:not(:disabled){border-color:#ffe2a8aa;background:#3b1c21}.song-cards button.current{border-color:#ffe2a8;box-shadow:0 0 14px #ffd59a33}.song-cards button:disabled{opacity:.6;cursor:default}
+.song-cards strong{font-size:16px;font-weight:600;color:#fff1cf}.song-cards span,.song-cards small{font-size:12px;color:#c2b2a0}
+.shelf-muted{color:#a8998c;font-size:12px}.shelf-error{color:#ffb4a8;background:#422a2b;border:1px solid #9b615c;border-radius:6px;padding:8px 10px;font-size:13px}

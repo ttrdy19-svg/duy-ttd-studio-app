@@ -1,0 +1,95 @@
+{
+  "luc": 1793981056056,
+  "cpu": 98.87323580920985,
+  "ram": 68.74540785442018,
+  "ramGB": 21.88619613647461,
+  "totalGB": 31.836593627929688,
+  "gpu": 0,
+  "vram": 2624,
+  "vramTotal": 4096,
+  "nhietGpu": 40,
+  "nhietCpu": null,
+  "cpuNote": "không đọc được (cần LibreHardwareMonitor)",
+  "disks": [
+    {
+      "drive": "C",
+      "freeGB": 109.35840225219727
+    },
+    {
+      "drive": "D",
+      "freeGB": 218.64033126831055
+    },
+    {
+      "drive": "E",
+      "freeGB": 109.17791748046875
+    }
+  ],
+  "top": [
+    {
+      "ten": "ffmpeg.exe",
+      "so": 1,
+      "gb": 6.064723968505859
+    },
+    {
+      "ten": "browser.exe",
+      "so": 44,
+      "gb": 3.674724578857422
+    },
+    {
+      "ten": "Code.exe",
+      "so": 26,
+      "gb": 2.994792938232422
+    },
+    {
+      "ten": "svchost.exe",
+      "so": 89,
+      "gb": 1.1687507629394531
+    },
+    {
+      "ten": "claude.exe",
+      "so": 13,
+      "gb": 1.0445404052734375
+    },
+    {
+      "ten": "node.exe",
+      "so": 22,
+      "gb": 0.9880714416503906
+    },
+    {
+      "ten": "ChatGPT.exe",
+      "so": 12,
+      "gb": 0.6463584899902344
+    },
+    {
+      "ten": "Zalo.exe",
+      "so": 9,
+      "gb": 0.5859603881835938
+    }
+  ],
+  "history": [
+    {
+      "luc": 1793981051272,
+      "cpu": 86.46428342211668,
+      "ram": 65.5114949222193,
+      "gpu": 0
+    },
+    {
+      "luc": 1793981056056,
+      "cpu": 98.87323580920985,
+      "ram": 68.74540785442018,
+      "gpu": 0
+    }
+  ],
+  "logs": [],
+  "errors": {
+    "permission": "Windows chặn đọc dòng lệnh: vẫn hiện RAM, không tự treo tiến trình khi thiếu bằng chứng."
+  },
+  "config": {
+    "bat": true,
+    "vang": 90,
+    "do": 95
+  },
+  "muc": null,
+  "suspended": [],
+  "cocCocApp": 0
+}

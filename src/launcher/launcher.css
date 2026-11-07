@@ -1,0 +1,51 @@
+.launcher-backdrop{position:absolute;inset:0;z-index:47;display:grid;grid-template-rows:minmax(0,1fr);place-items:center;background:#1a121766;backdrop-filter:blur(3px)}
+.launcher{position:relative;width:min(1040px,calc(100% - 32px));height:min(700px,calc(100% - 60px));display:flex;flex-direction:column;padding:22px 24px 20px;background:#2c2128f5;border:1px solid #e4c28a55;border-radius:14px;box-shadow:0 20px 70px #0f080c99}
+.launcher header small{color:#c9b28f;letter-spacing:2px;font-size:9px}
+.launcher header h2{font-family:'Libre Caslon Display',serif;font-weight:400;font-size:30px;margin:2px 0 14px;color:#f3e2b9}
+.launcher-close{position:absolute;right:14px;top:14px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;border:1px solid #e4c28a33;background:#ffffff0d;color:#e9d8bf}
+.launcher-body{flex:1;min-height:0;display:grid;grid-template-columns:310px 1fr;gap:16px}
+.launcher-list{margin:0;padding:0 6px 0 0;overflow:auto;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:#e4c28a44 transparent}
+.launcher-detail{scrollbar-width:thin;scrollbar-color:#e4c28a44 transparent}
+.launcher-row{width:100%;display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:9px;border:1px solid transparent;background:transparent;color:#eadbc4;text-align:left;transition:background .15s,border-color .15s}
+.launcher-row:hover{background:#ffffff0d}.launcher-row.on{background:#e4c28a1f;border-color:#e4c28a66;color:#fff3da}
+.launcher-row b{flex:1;font-size:14px;font-weight:500}.launcher-row.soon b{color:#a99c8c}
+.launcher-no{width:20px;font-size:10px;letter-spacing:1px;color:#e4c28a;font-variant-numeric:tabular-nums}
+.launcher-icon{flex-shrink:0;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;color:#fff;box-shadow:inset 0 1px 0 #ffffff55,0 4px 10px #0000004d}
+.launcher-icon.big{width:68px;height:68px;border-radius:18px}
+.launcher-dot{width:8px;height:8px;border-radius:50%;flex:none}.launcher-dot.xanh{background:#6fd39a;box-shadow:0 0 6px #6fd39a99}.launcher-dot.vang{background:#e8b85c}.launcher-dot.xam{background:#8d8d96}
+.launcher-detail{overflow:auto;padding:20px 22px;border-radius:12px;background:#ffffff08;border:1px solid #e4c28a1f;color:#efe2cc}
+.launcher-head{display:flex;align-items:center;gap:16px}
+.launcher-head small{display:inline-flex;align-items:center;gap:4px;color:#c9b28f;font-size:11px}
+.launcher-head h3{margin:3px 0 6px;font-family:'Libre Caslon Display',serif;font-weight:400;font-size:26px;color:#f6e6c4}
+.launcher-status{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10px}.launcher-status.xanh{background:#7fc79a2b;color:#bfeccc}
+.launcher-status.vang{background:#e8b85c2b;color:#f3d59a}.launcher-status.xam{background:#ffffff14;color:#bdb4a8}
+.launcher-short{margin:18px 0 10px;font-size:14px;line-height:1.6;color:#f3e7d2}
+.launcher-steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:12px;line-height:1.6;color:#d6c7b1}
+.launcher-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.launcher-actions button{padding:9px 16px;border-radius:8px;border:1px solid #e4c28a55;background:#ffffff0a;color:#f0e2cc;font-size:12px}
+.launcher-actions button:hover:not(:disabled){background:#ffffff16}
+.launcher-actions button.primary{background:linear-gradient(135deg,#e8c27a,#b9803f);border-color:transparent;color:#2b1d14;font-weight:600}
+.launcher-actions button:disabled{opacity:.45;cursor:default}
+.launcher-error{margin:14px 0 0;color:#ffb4a4;font-size:11px}
+@media(max-width:700px){.launcher{padding:18px 14px;height:calc(100% - 32px)}.launcher-body{grid-template-columns:1fr;grid-template-rows:auto 1fr}.launcher-list{flex-direction:row;overflow-x:auto;padding:0 0 6px}.launcher-row b{display:none}}
+
+/* Nút "Mini app" góc trái kiểu nút phúc lợi trong game: ngôi nhà trong khung tròn viền vàng, tỏa sáng nhẹ. */
+.launcher-orb{position:absolute;left:34px;top:178px;z-index:6;display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:none;color:#fbe9c4;padding:0}
+.launcher-orb .orb{position:relative;width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe7a8,#e0a548 45%,#9a5a22 100%);border:2px solid #fff1c9;box-shadow:0 0 0 3px #7a4a1c99,0 6px 18px #00000066,0 0 22px #ffd27a88;color:#5a2f10;animation:orb-float 3.2s ease-in-out infinite}
+.launcher-orb .orb::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid #ffe2a8;opacity:0;animation:orb-ring 2.6s ease-out infinite}
+.launcher-orb b{font-size:11px;font-weight:600;letter-spacing:.5px;padding:2px 9px;border-radius:9px;background:#3a2414d9;border:1px solid #e4c28a77;text-shadow:0 1px 2px #000}
+.launcher-orb:hover .orb{filter:brightness(1.1)}
+@keyframes orb-float{50%{transform:translateY(-4px)}}
+@keyframes orb-ring{0%{opacity:.8;transform:scale(.9)}100%{opacity:0;transform:scale(1.35)}}
+@media(max-width:950px){.launcher-orb{left:18px;top:150px}}
+
+/* cl-021: danh sách chia 5 nhóm, mỗi nhóm một dải có tiêu đề rõ + vạch màu riêng */
+.launcher-nhom{padding:8px 6px 6px 8px;border-left:3px solid var(--nhom,#e4c28a66);border-radius:4px 9px 9px 4px;background:#ffffff06}
+.launcher-nhom h4{margin:0 0 6px 4px;font-size:13px;font-weight:700;line-height:1.4;color:var(--nhom-chu,#f0d9ae)}
+.launcher-nhom ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.nhom-dieu-khien{--nhom:#7fd0a8;--nhom-chu:#b6ecd0}.nhom-kho{--nhom:#e6c27a;--nhom-chu:#f3dca8}.nhom-may{--nhom:#8fc7ff;--nhom-chu:#c3e0ff}
+.nhom-dich-vu{--nhom:#e98f8f;--nhom-chu:#ffc4bd}.nhom-giao-dien{--nhom:#b9b3d8;--nhom-chu:#dcd8f2}
+.launcher-nen{display:flex;flex-direction:column;gap:10px;margin-top:20px;font-size:14px;color:#f0e2cc}
+.launcher-nen label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.launcher-nen small{color:#c9b28f;font-size:12px;line-height:1.5}
+@media(max-width:700px){.launcher-nhom{flex:none}.launcher-nhom ol{flex-direction:row}}

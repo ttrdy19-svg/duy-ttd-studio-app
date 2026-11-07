@@ -1,0 +1,51 @@
+/* Tạo hình theo lệnh: trái = ảnh nhập + lưới phong cách, phải = câu lệnh + nút Tạo + kết quả */
+.tao-hinh { min-height: 100%; box-sizing: border-box; padding: 24px 28px 40px; color: #ece8f2; background: linear-gradient(#17141c, #0f0d13 70%); }
+.tao-hinh button { display: inline-flex; gap: 6px; align-items: center; border: 1px solid #4a3f5e; background: #1f1a27; color: #efe6ff; border-radius: 6px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: 12.5px; }
+.tao-hinh button:disabled { opacity: .5; cursor: not-allowed; }
+.tao-hinh button.primary { border: 0; background: #c7a6ff; color: #1b1030; font-weight: 600; padding: 9px 20px; }
+.tao-hinh input, .tao-hinh textarea, .tao-hinh select { box-sizing: border-box; width: 100%; border: 1px solid #3d3450; background: #120f18; color: #ece8f2; border-radius: 6px; padding: 8px 10px; font: inherit; font-size: 13px; }
+.tao-hinh textarea { resize: vertical; line-height: 1.45; }
+.tao-hinh h3 { margin: 18px 0 8px; font-size: 14px; color: #cdb8f5; font-weight: 600; }
+.tao-hinh label { display: flex; flex-direction: column; gap: 5px; color: #a89cbc; font-size: 12.5px; margin-bottom: 10px; }
+.th-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+.th-head > div { flex: 1; }
+.th-head h2 { display: flex; gap: 8px; align-items: center; margin: 0 0 4px; font-size: 24px; color: #e0d0ff; font-weight: 600; }
+.th-head p { margin: 0; color: #a89cbc; font-size: 12.5px; }
+.th-body { display: grid; grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.2fr); gap: 24px; }
+.th-anh { position: relative; display: flex; align-items: center; justify-content: center; height: 260px; border: 2px dashed #4a3f5e; border-radius: 10px; background: #15111c; cursor: pointer; overflow: hidden; }
+.th-anh.co { border-style: solid; }
+.th-anh:hover { border-color: #c7a6ff; }
+.th-anh img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.th-anh span { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #a89cbc; }
+.th-anh small { color: #7d7290; }
+.th-bo { position: absolute; top: 8px; right: 8px; padding: 4px !important; }
+.th-kieu { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.th-kieu button { flex-direction: column; align-items: flex-start; gap: 3px; padding: 10px; text-align: left; }
+.th-kieu button.on { border-color: #c7a6ff; box-shadow: 0 0 0 2px #c7a6ff55; background: #2a2138; }
+.th-kieu code { color: #c7a6ff; font-size: 11.5px; }
+.th-kieu b { font-size: 13.5px; }
+.th-kieu small { color: #a89cbc; font-size: 11.5px; line-height: 1.35; }
+.th-hang { display: flex; gap: 12px; align-items: flex-end; }
+.th-hang label { width: 110px; margin: 0; }
+.th-hang button.primary { margin-left: auto; }
+.th-buoc { color: #cdb8f5; font-size: 12.5px; }
+.th-loi { color: #ffb0a0; font-size: 12.5px; white-space: pre-wrap; }
+.th-quay { animation: th-quay 1s linear infinite; }
+@keyframes th-quay { to { transform: rotate(360deg); } }
+.th-ket { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.th-ket figure { margin: 0; background: #15111c; border: 1px solid #2e2640; border-radius: 8px; overflow: hidden; }
+.th-ket img { display: block; width: 100%; cursor: pointer; }
+.th-ket figcaption { padding: 6px 8px; font-size: 11.5px; color: #c9bde0; word-break: break-all; }
+.th-ket figcaption small { display: block; color: #7d7290; }
+.tao-hinh h3 small { color: #7d7290; font-weight: 400; margin-left: 6px; }
+.th-nhom { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center; }
+.th-nhom button.on { border-color: #c7a6ff; background: #2a2138; }
+.th-nhom input { width: 150px; margin-left: auto; }
+.th-kieu { max-height: 520px; overflow-y: auto; padding-right: 4px; }
+.th-kieu img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 5px; margin-bottom: 4px; }
+.th-dang { display: flex; gap: 12px; margin-bottom: 12px; padding: 10px; border: 1px solid #3d3450; border-radius: 8px; background: #15111c; }
+.th-dang img { width: 140px; height: 140px; object-fit: cover; border-radius: 6px; }
+.th-dang p { margin: 4px 0; color: #a89cbc; font-size: 12.5px; }
+.th-dang code { color: #c7a6ff; font-size: 11.5px; }
+.th-dang small { color: #7d7290; font-size: 11px; }
+.th-dang a { color: #c7a6ff; }

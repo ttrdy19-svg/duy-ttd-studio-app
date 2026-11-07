@@ -1,0 +1,95 @@
+{
+  "name": "ai-manor-studio",
+  "private": true,
+  "description": "Mộc Ngư Trang — studio video âm nhạc trên Windows",
+  "author": "Chú Lạ",
+  "version": "0.2.0",
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run",
+    "desktop": "npm run build && electron .",
+    "desktop:pack": "npm run build && electron-builder --win portable --x64",
+    "test:desktop": "node --test --test-concurrency=1 desktop/extension-cu-phap.test.cjs desktop/tong-dai/tong-dai.test.cjs desktop/duong-dan.test.cjs desktop/apps/profile-open.test.cjs desktop/media.test.cjs desktop/loop-workflow.test.cjs desktop/gemini-transcription.test.cjs desktop/gchat.test.cjs desktop/integration-fixes.test.cjs desktop/key-pool.test.cjs desktop/browser-session.test.cjs desktop/creation/creation.test.cjs desktop/production/production.test.cjs desktop/apps/thung-do.test.cjs desktop/apps/master-nhac.test.cjs desktop/apps/phat-hanh.test.cjs desktop/apps/suc-may.test.cjs desktop/apps/apps.test.cjs desktop/apps/broll.test.cjs desktop/apps/so-viec.test.cjs desktop/apps/han-muc.test.cjs desktop/apps/kho-clip.test.cjs desktop/apps/tao-hinh.test.cjs tools/sro/convert.test.cjs tools/giao-viec/workflow.test.cjs tools/giao-viec/api-nguon.test.cjs tools/giao-viec/giao.test.cjs tools/mv-ai/xoay-veo.test.cjs src/apps/PhongHop.test.cjs desktop/tong-dai/cl-040.test.cjs tools/mv-ai/goi-y-clip.test.cjs tools/giao-viec/chat-web.test.cjs",
+    "security:scan": "node desktop/security-scan.cjs",
+    "ban-do": "node tools/ban-do/quet.cjs"
+  },
+  "build": {
+    "compression": "store",
+    "npmRebuild": false,
+    "appId": "studio.ai-manor.desktop",
+    "productName": "AI Manor Studio",
+    "directories": {
+      "output": "release/manor"
+    },
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "!desktop/*.test.cjs",
+      "!desktop/**/*.test.cjs",
+      "!desktop/**/smoke.cjs",
+      "!desktop/production/vault-smoke.cjs",
+      "!desktop/production/benchmark.cjs",
+      "tools/ky-am/**/*",
+      "tools/srt-local/**/*",
+      "tools/mv/**/*",
+      "!tools/mv/library/**/*",
+      "!tools/mv/out/**/*",
+      "!tools/mv/bin/**/*",
+      "package.json",
+      "!node_modules/ffprobe-static/bin/darwin/**/*",
+      "!node_modules/ffprobe-static/bin/linux/**/*",
+      "!node_modules/ffprobe-static/bin/win32/ia32/**/*",
+      "!desktop/key-pool.local.json",
+      "!desktop/**/*.local.json",
+      "!desktop/security-scan.cjs"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**/*",
+      "node_modules/ffprobe-static/**/*",
+      "tools/ky-am/**/*.py",
+      "tools/srt-local/**/*.py"
+    ],
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "AI-Manor-Studio.exe"
+    }
+  },
+  "dependencies": {
+    "@fix-webm-duration/fix": "^1.0.1",
+    "@fix-webm-duration/parser": "^1.0.1",
+    "@fontsource/be-vietnam-pro": "^5.3.0",
+    "@fontsource/dancing-script": "^5.3.0",
+    "@fontsource/libre-caslon-display": "^5.3.0",
+    "@pixiv/three-vrm": "^3.5.5",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "lucide-react": "^0.468.0",
+    "playwright-core": "^1.58.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.186.1",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "electron": "^41.7.1",
+    "electron-builder": "^26.18.0",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.4.1",
+    "vitest": "^3.2.4"
+  }
+}

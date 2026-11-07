@@ -1,0 +1,129 @@
+.hall { height: 100%; overflow-y: auto; padding: 60px 24px 40px; box-sizing: border-box; color: #f3ead2; font-family: 'Be Vietnam Pro', sans-serif; font-size: 13px;
+  background: radial-gradient(ellipse at 50% 0%, #2a3f5c 0%, #0d1824 60%, #08101a 100%); }
+.hall-book { max-width: 1240px; margin: 0 auto; }
+.hall h2 { font: 400 34px 'Libre Caslon Display', serif; color: #ffe7b5; margin: 0 0 6px; }
+.hall h3 { display: flex; align-items: center; gap: 8px; margin: 0; font: 400 20px 'Libre Caslon Display', serif; color: #ffe7b5; }
+.hall-muted { color: #b9c6c9; font-size: 12px; line-height: 1.7; }
+.hall-error { color: #ffb4a8; background: #2a0f0f99; border: 1px solid #ff8f7f55; padding: 8px 12px; border-radius: 8px; }
+.hall-section { margin-top: 24px; padding: 18px 20px; border-radius: 16px; border: 1px solid #ffe2a833; background: linear-gradient(160deg, #18304a99, #0b1a2acc); }
+.hall-section header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.hall button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #ffe2a855; border-radius: 8px; background: #ffe2a812; color: #f6e3b0; padding: 7px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+.hall button:disabled { opacity: .4; cursor: default; }
+.hall .hall-icon { padding: 6px 8px; }
+.hall input:not([type=checkbox]), .hall textarea { background: #07121ccc; border: 1px solid #ffe2a833; color: #f3ead2; border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 12px; box-sizing: border-box; }
+.hall code { font-size: 11px; color: #ffe2a8; word-break: break-all; }
+.hall-steps { margin: 4px 0 14px; padding-left: 20px; line-height: 1.9; color: #dfe6e2; font-size: 12px; }
+.hall-keys { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.hall-dot { width: 10px; height: 10px; border-radius: 50%; background: #5b6770; }
+.hall-dot.on { background: #8fd8b4; box-shadow: 0 0 10px #8fd8b4; }
+.hall-keys li { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; border-radius: 6px; background: #07121c66; }
+.hall-add { display: flex; gap: 8px; align-items: flex-start; margin: 8px 0; }
+.hall-add textarea, .hall-add input { flex: 1; }
+/* Bảng tài khoản: mỗi dòng một profile, mỗi cột một trang, ô là gói đã đăng ký */
+.hall-summary { margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; background: #ffe2a80d; color: #f6e3b0; font-size: 12px; line-height: 1.7; }
+.hall-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #ffffff12; }
+.hall-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.hall-table th { position: sticky; top: 0; padding: 8px 6px; text-align: left; font-weight: 500; color: #ffe7b5; background: #0b1a2a; white-space: nowrap; border-bottom: 1px solid #ffe2a833; }
+.hall-table th.group-ai { color: #9fe0ff; }
+.hall-table th.group-publish { color: #ffc98f; }
+.hall-table th .hall-icon { padding: 1px 3px; margin-left: 4px; }
+.hall-table td { padding: 6px 4px; border-bottom: 1px solid #ffffff0d; vertical-align: middle; }
+.hall-table tr.online td:first-child { box-shadow: inset 3px 0 0 #8fd8b4; }
+.hall-table td small.bad { display: block; color: #f0a7a0; font-size: 10px; margin-top: 2px; }
+.hall-name { display: flex; align-items: center; gap: 8px; }
+.hall .hall-name input { width: 104px; }
+.hall .hall-email { width: 168px; }
+.hall-site select { width: 100%; min-width: 68px; background: #07121ccc; border: 1px solid #ffffff1a; color: #b9c6c9; border-radius: 6px; padding: 5px 4px; font: inherit; font-size: 12px; }
+.hall-site.manual select { color: #f6e3b0; border-color: #ffe2a855; }
+.hall-site.ok select { color: #c9f5df; border-color: #8fd8b4aa; box-shadow: 0 0 8px #8fd8b433; }
+.hall-site.lost select { color: #ffc0b6; border-color: #ff8f7faa; }
+.hall-work { display: flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 10px; color: #9bb2ae; white-space: nowrap; }
+.hall-row-actions { display: flex; gap: 4px; }
+.hall .hall-row-actions button { white-space: nowrap; padding: 6px 8px; }
+
+/* Hạn gói ngay dưới ô chọn gói; hàng chi tiết mở ra dưới mỗi profile */
+.hall-until { display: block; margin-top: 3px; font-size: 10px; color: #9bb2ae; white-space: nowrap; }
+.hall-until.soon { color: #ffd27a; }
+.hall-until.expired { color: #ff9f92; }
+.hall-credits { display: block; margin-top: 3px; font-size: 10px; color: #8fe0b0; white-space: nowrap; }
+.hall-credits.low { color: #ffd27a; }
+.hall-credits.lost { color: #ff9f92; }
+.hall-expiring { margin: -4px 0 10px; padding: 7px 12px; border-radius: 8px; background: #ff8f7f14; border: 1px solid #ff8f7f44; color: #ffc9bf; font-size: 12px; }
+.hall .hall-more svg { transition: transform .2s; }
+.hall .hall-more.open svg { transform: rotate(180deg); }
+.hall-detail-row td { background: #050d16aa; padding: 12px 14px 16px; }
+.hall-detail { display: flex; flex-direction: column; gap: 12px; }
+.hall-detail label { display: flex; flex-direction: column; gap: 4px; font-size: 11px; color: #c9b98c; }
+.hall-detail-note textarea { width: 100%; resize: vertical; }
+.hall-detail-sites { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+.hall-detail fieldset { margin: 0; padding: 10px 12px; border-radius: 10px; border: 1px solid #ffe2a826; background: #0b1a2a99; display: flex; flex-direction: column; gap: 8px; }
+.hall-detail legend { padding: 0 6px; font-size: 12px; color: #ffe7b5; }
+.hall-detail select { background: #07121ccc; border: 1px solid #ffe2a833; color: #f3ead2; border-radius: 8px; padding: 7px 8px; font: inherit; font-size: 12px; }
+.hall-detail input[type=date] { color-scheme: dark; }
+.hall-channels { font-size: 10px; color: #9fe0ff; line-height: 1.5; }
+.hall-scan { font-size: 10px; line-height: 1.5; color: #9bb2ae; }
+.hall-scan.ok { color: #8fd8b4; }
+.hall-scan.bad { color: #ffc0b6; }
+.hall-detail-add { margin: 0; }
+.hall-detail-add input { flex: 1; }
+
+/* YouTube / TikTok: tên kênh thay cho ô chọn gói */
+.hall-channel { display: inline-flex; align-items: center; gap: 6px; max-width: 190px; padding: 5px 9px; border-radius: 14px; background: #ffc98f14; border: 1px solid #ffc98f44; color: #ffe2c0; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hall-channel i { flex: none; width: 7px; height: 7px; border-radius: 50%; background: #ffc98f; }
+.hall-site.ok .hall-channel i { background: #8fd8b4; box-shadow: 0 0 6px #8fd8b4; }
+.hall-site.lost .hall-channel { border-color: #ff8f7faa; color: #ffc0b6; } .hall-site.lost .hall-channel i { background: #ff8f7f; }
+.hall-channel.none { background: none; border-color: transparent; color: #5f6d74; }
+.hall-howto { margin: 4px 0 12px; } .hall-howto summary { cursor: pointer; color: #c9b98c; font-size: 12px; }
+
+.hall-profile { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; padding: 10px 12px; border-radius: 10px; border: 1px solid #9fe0ff33; background: #0b1a2a99; }
+.hall-profile label { min-width: 240px; }
+.hall-detail .hall-tick { flex-direction: row; align-items: center; gap: 6px; color: #dfe6e2; min-width: 0; }
+/* Danh sách profile Cốc Cốc trên máy: tên + ô link + nút mở trong profile thật. */
+.hall-profiles ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.hall-profiles li { display: grid; grid-template-columns: minmax(180px, 1.2fr) minmax(160px, 1fr) auto; gap: 8px; align-items: center; }
+.hall-profiles li small { color: #9b917f; font-size: 11px; }
+.hall-profiles li button { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.hall-ok { margin: 8px 0; padding: 8px 12px; border-radius: 8px; background: #1f3a2a; border: 1px solid #4caf7a88; color: #cdeed9; font-size: 13px; }
+.hall-profile-actions { display: inline-flex; gap: 6px; }
+.hall-profiles { margin: 14px 0 10px; padding: 12px 14px; border-radius: 10px; border: 1px solid #2f4a66; background: #0f1d2c; }
+.hall-profiles h4 { margin: 0 0 4px; font-size: 14px; color: #f1d9a6; }
+.hall-profiles li { padding: 6px 8px; border-radius: 8px; }
+.hall-profiles li.no-ext { background: #2a1f1499; }
+.hall-profiles li.has-ext b::before { content: '● '; color: #6fd39a; }
+.hall-profiles li.no-ext b::before { content: '○ '; color: #c9a66b; }
+.hall-profiles-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.hall-profiles-head button { display: inline-flex; align-items: center; gap: 5px; }
+.hall-connect { margin-left: 8px; font-style: normal; font-size: 11px; color: #c9a66b; }
+.hall-connect.da-noi { color: #6fd39a; } .hall-connect.khong-noi { color: #ff9a8a; }
+.hall-head-actions { display: inline-flex; gap: 8px; }
+/* Lỗi tài khoản (việc tự động hỏng vì tài khoản): dấu "!" đỏ cạnh tên / ô dịch vụ, bấm mở hộp chi tiết */
+.hall .hall-loi-mark { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; padding: 0; margin-left: 4px; border-radius: 50%; border: 0; background: #d6362f; color: #fff; font-weight: 700; font-size: 12px; line-height: 1; box-shadow: 0 0 8px #d6362f99; vertical-align: middle; }
+.hall-loi { padding: 12px 14px; border-radius: 10px; border: 1px solid #d6362f88; background: #2a0f0fcc; }
+.hall-loi header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.hall-loi h4 { margin: 0; color: #ffb4ad; font-size: 14px; font-weight: 600; }
+.hall-loi ul { list-style: none; margin: 0 0 8px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.hall-loi li { padding: 8px 10px; border-radius: 8px; background: #07121c99; border-left: 3px solid #d6362f; }
+.hall-loi-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.hall-loi-head span { color: #f6e3b0; }
+.hall-loi-head small { color: #9bb2ae; }
+.hall-loi p { margin: 4px 0; line-height: 1.5; }
+.hall-loi .hall-loi-goiy { color: #c9f5df; }
+/* Chủ tịch đã phản hồi, chờ Claude kiểm lại: dấu vàng */
+.hall .hall-loi-mark.cho-kiem { background: #e0a400; color: #1d1400; box-shadow: 0 0 8px #e0a40099; }
+.hall-loi li.cho-kiem { border-left-color: #e0a400; }
+.hall-loi-state { color: #ffd45c; font-style: normal; font-size: 12px; }
+.hall-loi .hall-loi-note { color: #9bb2ae; font-size: 12px; }
+.hall-loi .hall-loi-claude { color: #ffcf8a; }
+.hall-loi-link button { font-size: 12px; }
+.hall-loi-reply { display: flex; gap: 8px; align-items: flex-start; margin-top: 6px; }
+.hall-loi-reply textarea { flex: 1; min-width: 0; resize: vertical; font: inherit; font-size: 12px; }
+.hall-loi-reply > div { display: flex; flex-direction: column; gap: 4px; }
+/* Tiêu đề Sổ dạng bảng: nút chuyển sang dạng sách phép (cl-015) */
+.hall h2.hall-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+/* cl-022: bớt chữ nhỏ dày đặc — chữ mô tả và nút ≥ 15px, font dễ đọc. */
+.hall { font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: 15px; }
+.hall-muted, .hall-ok, .hall-error, .hall-summary, .hall-expiring, .hall-steps, .hall-howto summary { font-size: 15px; line-height: 1.6; }
+.hall button { font-size: 15px; }
+.hall input:not([type=checkbox]), .hall textarea, .hall-detail select, .hall-site select { font-size: 15px; }
+.hall-detail label, .hall-detail legend, .hall-profiles li small, .hall-loi p, .hall-loi-reply textarea { font-size: 15px; }
+.hall-profiles h4, .hall-loi h4 { font-size: 17px; }

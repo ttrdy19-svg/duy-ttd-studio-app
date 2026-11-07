@@ -1,0 +1,39 @@
+node_modules
+node_modules/
+.tmp/
+scratch/
+desktop/key-pool.local.json
+.env
+.env.*
+!.env.example
+dist/
+*.tsbuildinfo
+.vite/
+playwright-report/
+test-results/
+release/
+desktop-check.png
+desktop-check.json
+desktop-build.log
+desktop-check-exports/
+world-check*.png
+world-check.json
+desktop-check-error.txt
+creation-check*.png
+creation-check*.json
+creation-check-error.txt
+desktop/anthropic-key.local.txt
+desktop/api-nguon.local.json
+
+# Kết quả bộ chạy workflow (tools/giao-viec/workflow.cjs)
+AI Giao Viec/chay/
+# đầu ra của graphify (thử nghiệm bản đồ, xem tools/ban-do/BAN-DO.md)
+graphify-out/
+tools/ban-do/graph.json
+tools/ban-do/xem.html
+.claude/settings.local.json
+
+# Thư mục tạm của thợ khi kiểm (07/11/2026: .cl-035-temp lọt vào repo)
+.cl-*-temp/
+*.local.txt
+*.local.json

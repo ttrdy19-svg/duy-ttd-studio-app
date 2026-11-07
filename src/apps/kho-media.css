@@ -1,0 +1,63 @@
+/* Kho media: bộ lọc trái, lưới ảnh nhỏ (ảnh 480 px làm sẵn), khung xem toàn màn hình phóng to / thu nhỏ + bảng gắn bài bên phải */
+.kho-media { --km-bg: #15110d; --km-panel: #1d1813; --km-line: #3a3026; --km-text: #efe6d8; --km-muted: #a8998a; --km-accent: #d7b483;
+  display: grid; grid-template-columns: 240px minmax(0, 1fr); width: 100%; min-height: 100%; box-sizing: border-box; color: var(--km-text); background: var(--km-bg); }
+.kho-media button { font: inherit; color: inherit; cursor: pointer; align-items: stretch; }
+.km-rail { padding: 20px 16px; border-right: 1px solid var(--km-line); background: var(--km-panel); overflow: auto; max-height: 100vh; position: sticky; top: 0; box-sizing: border-box; }
+.km-rail h3 { margin: 16px 0 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--km-muted); font-weight: 600; }
+.km-rail ul { list-style: none; margin: 0; padding: 0; }
+.km-rail li button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 5px 8px; border: 0; border-radius: 6px; background: transparent; font-size: 13px; text-align: left; }
+.km-rail li button span { flex: 1; }
+.km-rail li button small { color: var(--km-muted); }
+.km-rail li button:hover { background: #2a221a; }
+.km-rail li button[aria-pressed="true"] { background: #3a2e20; color: #f6e2bf; }
+.km-search { display: flex; gap: 6px; align-items: center; padding: 7px 10px; border: 1px solid var(--km-line); border-radius: 8px; background: var(--km-bg); }
+.km-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--km-text); font: inherit; font-size: 13px; }
+.km-add { margin-top: 10px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; padding: 8px; border-radius: 8px; border: 1px solid var(--km-accent); background: #3a2e20; color: #f6e2bf; }
+.km-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.km-chips button { border: 1px solid var(--km-line); background: transparent; border-radius: 14px; padding: 4px 10px; font-size: 12px; }
+.km-chips button[aria-pressed="true"] { background: var(--km-accent); border-color: var(--km-accent); color: #1c140a; }
+.km-main { padding: 18px 20px 40px; min-width: 0; box-sizing: border-box; }
+.km-bar { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; font-size: 13px; }
+.km-bar > button { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--km-line); background: transparent; border-radius: 6px; padding: 5px 8px; }
+.km-empty { color: var(--km-muted); font-size: 13px; }
+.km-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.km-tile { display: flex; flex-direction: column; gap: 4px; padding: 0 0 8px; border: 1px solid var(--km-line); border-radius: 10px; background: var(--km-panel); overflow: hidden; text-align: left; }
+.km-tile:hover { border-color: var(--km-accent); }
+.km-img { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; background: #0d0a08; }
+.km-img img { width: 100%; height: 100%; object-fit: contain; }
+.km-img i { width: 40%; height: 3px; border-radius: 2px; background: #2a221a; }
+.km-img em { position: absolute; left: 6px; bottom: 6px; padding: 2px 6px; border-radius: 5px; background: rgba(0, 0, 0, .7); font-size: 11px; font-style: normal; color: #f6e2bf; }
+.km-img em.ratio { left: auto; right: 6px; }
+.km-tile b { padding: 0 10px; font-size: 14px; font-weight: 600; color: #f6dc8c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.km-tile small { padding: 0 10px; font-size: 12px; color: var(--km-muted); }
+
+.km-viewer { position: fixed; inset: 0; z-index: 60; display: grid; grid-template-columns: minmax(0, 1fr) 340px; background: rgba(8, 6, 4, .96); }
+.km-stage { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; }
+.km-stage:active { cursor: grabbing; }
+.km-stage img { max-width: 100%; max-height: 100%; transform-origin: center; user-select: none; }
+.km-stage video { max-width: 100%; max-height: 100%; }
+.km-nav { position: absolute; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 46px; height: 64px; border: 0; border-radius: 8px; background: rgba(0, 0, 0, .5); }
+.km-nav.prev { left: 12px; } .km-nav.next { right: 12px; }
+.km-zoom { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; gap: 6px; align-items: center; padding: 6px 10px; border-radius: 10px; background: rgba(0, 0, 0, .7); font-size: 13px; }
+.km-zoom button { display: flex; align-items: center; padding: 4px 8px; border: 1px solid var(--km-line); border-radius: 6px; background: transparent; }
+.km-zoom span { min-width: 48px; text-align: center; }
+.km-side { position: relative; padding: 20px 16px; border-left: 1px solid var(--km-line); background: var(--km-panel); overflow: auto; display: flex; flex-direction: column; gap: 8px; }
+.km-side h2 { margin: 0 28px 0 0; font-size: 18px; color: #f6dc8c; font-weight: 600; }
+.km-side h3 { display: flex; align-items: center; gap: 6px; margin: 10px 0 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--km-muted); font-weight: 600; }
+.km-close { position: absolute; right: 12px; top: 14px; display: flex; border: 0; background: transparent; }
+.km-kind { margin: 0; font-size: 12px; color: var(--km-muted); }
+.km-path { margin: 0; font-size: 12px; word-break: break-all; }
+.km-path small { display: block; color: var(--km-muted); }
+.km-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.km-actions button, .km-save { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 7px; border: 1px solid var(--km-line); background: transparent; font-size: 13px; }
+.km-actions button.primary, .km-save { border-color: var(--km-accent); background: #3a2e20; color: #f6e2bf; }
+.km-save:disabled { opacity: .5; cursor: default; }
+.km-songs, .km-matches { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.km-songs li { display: flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 6px; background: #2a221a; }
+.km-songs li span { flex: 1; }
+.km-songs li small { color: var(--km-muted); font-size: 11px; }
+.km-songs li button { display: flex; border: 0; background: transparent; }
+.km-songs li.muted { background: transparent; color: var(--km-muted); }
+.km-matches button { width: 100%; text-align: left; padding: 4px 8px; border: 1px dashed var(--km-line); border-radius: 6px; background: transparent; font-size: 13px; }
+.km-find input { width: 100%; box-sizing: border-box; padding: 7px 10px; border-radius: 7px; border: 1px solid var(--km-line); background: var(--km-bg); color: var(--km-text); font: inherit; font-size: 13px; }
+.km-side textarea { min-height: 80px; resize: vertical; padding: 8px; border-radius: 7px; border: 1px solid var(--km-line); background: var(--km-bg); color: var(--km-text); font: inherit; font-size: 13px; }

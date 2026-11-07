@@ -1,0 +1,42 @@
+.kho3d { display: grid; grid-template-columns: 230px minmax(0, 1fr) minmax(360px, 42%); height: 100%; min-height: 0; color: #e8e2d6; background: #161b21; font-size: 13px; }
+.kho-side { padding: 14px 12px; border-right: 1px solid #2c333c; display: flex; flex-direction: column; gap: 6px; overflow: auto; }
+.kho-side h2 { margin: 0 0 8px; font-size: 18px; color: #f0d9a8; }
+.kho-side h2 small { font-size: 11px; color: #9aa3ad; font-weight: 400; margin-left: 6px; }
+.kho-loai { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 8px; border: 1px solid transparent; background: none; color: inherit; cursor: pointer; text-align: left; }
+.kho-loai small { margin-left: auto; color: #8f99a4; }
+.kho-loai:hover { background: #222932; }
+.kho-loai[aria-pressed='true'] { background: #2d2a22; border-color: #8c7444; color: #f6dfa8; }
+.kho-search { display: flex; align-items: center; gap: 6px; margin-top: 10px; padding: 6px 8px; border-radius: 8px; background: #0f1318; border: 1px solid #2c333c; }
+.kho-search input { flex: 1; min-width: 0; background: none; border: 0; color: inherit; outline: none; }
+.kho-side select { padding: 6px; border-radius: 8px; background: #0f1318; color: inherit; border: 1px solid #2c333c; }
+.kho-note, .kho-err { font-size: 11px; color: #8f99a4; margin: 6px 0 0; }
+.kho-err { color: #ff9a8a; }
+.kho-grid { overflow-y: auto; overflow-x: hidden; min-width: 0; padding: 12px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; align-content: start; scrollbar-width: thin; }
+.kho-card { display: flex; flex-direction: column; gap: 3px; padding: 6px; border-radius: 10px; border: 1px solid #2c333c; background: #1d232a; color: inherit; cursor: pointer; text-align: left; min-width: 0; }
+.kho-card:hover { border-color: #5b6673; }
+.kho-card[aria-pressed='true'] { border-color: #c9a35e; box-shadow: 0 0 0 1px #c9a35e inset; }
+.kho-card img, .kho-noimg { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 7px; background: #2b323b; }
+.kho-noimg { display: grid; place-items: center; font-size: 11px; color: #7b8590; }
+.kho-card b { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kho-card small { font-size: 10.5px; color: #8f99a4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kho-detail { border-left: 1px solid #2c333c; display: flex; flex-direction: column; min-height: 0; overflow: auto; }
+.kho-modes { display: flex; gap: 4px; padding: 8px; }
+.kho-modes button, .kho-tools button, .kho-info button { padding: 5px 12px; border-radius: 7px; border: 1px solid #39424d; background: #222932; color: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+.kho-modes button[aria-pressed='true'], .kho-tools button[aria-pressed='true'] { background: #3a3222; border-color: #c9a35e; color: #f6dfa8; }
+.kho-viewer { position: relative; flex: 0 0 auto; height: min(56vh, 520px); margin: 0 8px; border-radius: 10px; overflow: hidden; background: #20262e; }
+.kho-canvas { position: absolute; inset: 0; }
+.kho-status { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; color: #c3cad2; background: #20262ecc; }
+.kho-tools { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; }
+.kho-clips { position: absolute; left: 8px; bottom: 8px; max-height: 45%; overflow: auto; background: #12161bdd; border-radius: 8px; padding: 6px 8px; scrollbar-width: thin; }
+.kho-clips b { font-size: 11px; color: #c9a35e; }
+.kho-clips ul { list-style: none; margin: 4px 0 0; padding: 0; }
+.kho-clips button { display: flex; align-items: center; gap: 5px; width: 100%; padding: 2px 4px; background: none; border: 0; color: inherit; cursor: pointer; font-size: 12px; text-align: left; }
+.kho-clips button[aria-pressed='true'] { color: #f6dfa8; }
+.kho-clips small { margin-left: auto; color: #8f99a4; padding-left: 8px; }
+.kho-info { padding: 10px 12px 16px; }
+.kho-info dl { margin: 0; display: grid; gap: 3px; }
+.kho-info dl div { display: grid; grid-template-columns: 130px 1fr; gap: 8px; }
+.kho-info dt { color: #8f99a4; }
+.kho-info dd { margin: 0; word-break: break-word; }
+.kho-path { font-size: 11px; color: #7b8590; word-break: break-all; }
+.kho-empty { padding: 30px; color: #8f99a4; }

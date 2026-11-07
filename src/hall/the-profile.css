@@ -1,0 +1,42 @@
+/* Thẻ profile trực quan (cl-022): chữ ≥ 15px, font sans dễ đọc, dòng thoáng, không chữ nhỏ dày đặc (cùng chuẩn cl-021). */
+.the-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin: 12px 0 18px; }
+.the-profile { display: flex; flex-direction: column; gap: 14px; padding: 18px 20px; border-radius: 16px; border: 1px solid #ffe2a833;
+  background: linear-gradient(160deg, #1b3550ee, #0b1a2aee); font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: 15px; line-height: 1.55; color: #f3ead2; }
+.the-profile.online { border-color: #8fd8b488; box-shadow: 0 0 0 1px #8fd8b433 inset; }
+.the-profile header { display: flex; align-items: center; gap: 12px; }
+.the-ten { flex: 1; min-width: 0; }
+.the-ten h4 { margin: 0; font-size: 18px; font-weight: 600; color: #ffe7b5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.the-ten span { font-size: 15px; color: #c3d0d2; }
+
+/* Dãy biểu tượng trang */
+.the-day { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.the-icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px;
+  font-size: 16px; font-weight: 700; background: #2b3540; color: #8b979e; border: 1px solid #ffffff14; cursor: default; }
+.the-icon.ok { background: #1f5a3c; color: #d4ffe6; border-color: #8fd8b4; box-shadow: 0 0 10px #8fd8b444; }
+.the-icon.loi { background: #5a1d1a; color: #ffd8d2; border-color: #ff7a6b; }
+.the-icon em { position: absolute; top: -7px; right: -7px; width: 18px; height: 18px; border-radius: 50%; background: #d6362f; color: #fff; font-style: normal; font-size: 13px; line-height: 18px; text-align: center; }
+
+/* Tín dụng nổi bật */
+.the-tin-dung { display: flex; flex-wrap: wrap; gap: 18px; }
+.the-tin-dung span { display: flex; flex-direction: column; }
+.the-tin-dung b { font-size: 26px; font-weight: 700; color: #8fe0b0; line-height: 1.15; }
+.the-tin-dung .thap b { color: #ffd27a; }
+.the-tin-dung small { font-size: 15px; color: #c3d0d2; }
+
+/* Trang đã ghi + ô "Dùng làm gì" dưới tên */
+.the-trang { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.the-trang li { display: flex; flex-direction: column; gap: 4px; padding-left: 10px; border-left: 3px solid #5b6770; }
+.the-trang li.ok { border-left-color: #8fd8b4; }
+.the-trang li.loi { border-left-color: #ff7a6b; }
+.the-trang b { font-size: 16px; font-weight: 600; color: #ffe7b5; }
+.the-trang-luc { font-size: 15px; color: #c3d0d2; }
+.hall input.the-dung-lam, .the-dung-lam { width: 100%; font-size: 15px; padding: 7px 10px; background: #07121ccc; border: 1px solid #ffe2a833; color: #f3ead2; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+.the-dung-lam::placeholder { color: #8d9aa0; }
+
+/* Nút chính to */
+.the-nut { display: flex; flex-wrap: wrap; gap: 10px; }
+.hall .the-nut button { font-size: 16px; padding: 12px 18px; border-radius: 12px; gap: 8px; }
+.hall .the-nut .the-nut-chinh { flex: 1 1 220px; justify-content: center; background: #e9b84a; color: #1d1400; border-color: #ffd977; font-weight: 600; }
+.hall .the-nut .the-nut-chinh:hover:not(:disabled) { background: #f5c95c; }
+.hall .the-nut .the-nut-phu { background: #8fd8b41f; border-color: #8fd8b488; color: #d4ffe6; }
+.the-bang-cu > summary { cursor: pointer; font-size: 15px; color: #c9b98c; margin: 4px 0 10px; }

@@ -1,0 +1,91 @@
+/* Họa thất: gian phòng huyền huyễn, mọi bảng là kính mờ phát sáng nổi trước nền phòng */
+.hoathat { position: relative; height: 100%; min-height: 640px; overflow: hidden; color: #f3ead2; font-family: 'Be Vietnam Pro', sans-serif; background: #0b1622; isolation: isolate; }
+.ht-world { position: absolute; inset: -3%; z-index: 0; transition: transform .25s ease-out; }
+.ht-world.is-3d { inset: 0; }
+.ht-room { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(1.05); }
+.ht-vignette { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at 50% 48%, transparent 30%, #08121ccc 100%), linear-gradient(180deg, #08121c55, transparent 25%, transparent 70%, #08121caa); }
+.ht-stage { position: absolute; inset: 0; }
+.ht-stage canvas { width: 100% !important; height: 100% !important; display: block; }
+.ht-unavailable { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #c9d4d8; }
+
+.hoathat button { font: inherit; cursor: pointer; }
+.ht-icon { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #ffe2a855; background: #0b1a2a99; color: #f6e3b0; backdrop-filter: blur(6px); }
+.ht-icon:hover { border-color: #ffe2a8; box-shadow: 0 0 14px #ffd59a66; }
+.ht-songbar { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 10px; padding: 7px 10px 7px 16px; border-radius: 22px; max-width: calc(100% - 140px); }
+.ht-songbar-title { display: inline-flex; align-items: center; gap: 7px; min-width: 0; max-width: 420px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 14px; color: #fff1cf; }
+.ht-songbar-title small { color: #b9c6c9; font-size: 11px; }
+.ht-songbar button { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.ht-songbar button:disabled { opacity: .5; }
+.ht-sessions .ht-song-list button.current { border-color: #ffe2a8aa !important; background: #ffe2a81c !important; }
+
+.ht-glass { background: linear-gradient(160deg, #18304acc, #0b1a2ad9); border: 1px solid #ffe2a840; border-radius: 16px; box-shadow: 0 20px 60px #02070dcc, inset 0 1px 0 #ffffff22, 0 0 40px #ffd59a18; backdrop-filter: blur(14px) saturate(1.2); padding: 18px 20px; }
+.ht-glass header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.ht-glass h3 { margin: 0; font: 400 22px 'Libre Caslon Display', serif; color: #ffe7b5; letter-spacing: .5px; }
+.ht-glass button:not(.ht-icon):not(.ht-orb-button):not(.ht-plain) { border: 1px solid #ffe2a855; border-radius: 8px; background: #ffe2a812; color: #f6e3b0; padding: 7px 12px; font-size: 12px; }
+.ht-glass input, .ht-glass select, .ht-glass textarea { background: #07121ccc; border: 1px solid #ffe2a833; color: #f3ead2; border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 12px; }
+
+.ht-hint { position: absolute; left: 50%; bottom: 7%; transform: translateX(-50%); margin: 0; padding: 8px 18px; border-radius: 20px; background: #08121c99; border: 1px solid #ffe2a833; font-size: 13px; letter-spacing: .4px; color: #ffe7b5; text-shadow: 0 0 12px #ffd59a88; animation: ht-breathe 3s ease-in-out infinite; z-index: 2; }
+.ht-busy { display: flex; align-items: center; gap: 10px; animation: none; }
+.ht-spinner { width: 14px; height: 14px; border: 2px solid #ffe2a844; border-top-color: #ffe2a8; border-radius: 50%; animation: ht-spin 1s linear infinite; }
+.ht-error { color: #ffb4a8; font-size: 12px; }
+.ht-floating { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); padding: 8px 14px; border-radius: 10px; background: #2a0f0fcc; border: 1px solid #ff8f7f66; z-index: 7; max-width: 80%; }
+.ht-muted { color: #b6c3c8; font-size: 12px; }
+@keyframes ht-breathe { 50% { opacity: .55; } }
+@keyframes ht-spin { to { transform: rotate(360deg); } }
+
+/* Hai lựa chọn hiện ra hai bên nốt nhạc */
+.ht-choice { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; gap: min(34vw, 420px); z-index: 3; pointer-events: none; }
+.ht-orb-button { pointer-events: auto; display: flex; white-space: nowrap; min-width: 210px; align-items: center; gap: 12px; padding: 16px 22px; border-radius: 40px; border: 1px solid #ffe2a8aa; color: #fff4d6; background: radial-gradient(circle at 30% 30%, #ffe2a855, #14304acc 70%); box-shadow: 0 0 30px #ffd59a55, inset 0 0 20px #ffe2a833; animation: ht-rise .45s cubic-bezier(.2,1.4,.4,1) both; text-align: left; }
+.ht-orb-button:hover { box-shadow: 0 0 46px #ffd59a99, inset 0 0 26px #ffe2a855; transform: translateY(-2px); }
+.ht-orb-button span { display: flex; flex-direction: column; font-size: 15px; }
+.ht-orb-button small { font-size: 11px; color: #e2d6b8; }
+@keyframes ht-rise { from { opacity: 0; transform: scale(.6) translateY(20px); } }
+
+.ht-picker { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(760px, calc(100% - 40px)); max-height: calc(100% - 60px); display: flex; flex-direction: column; z-index: 4; animation: ht-rise .35s ease-out both; }
+.ht-filters { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+/* Mỗi bài một khung riêng cho dễ nhìn */
+.ht-song-list { list-style: none; margin: 0; padding: 2px 4px 2px 0; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.ht-song-list button { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; border: 1px solid #ffe2a82e !important; border-radius: 10px; background: #0a1826b3 !important; box-shadow: inset 0 1px 0 #ffffff0d; }
+.ht-song-list button:hover:not(:disabled) { background: #ffe2a814 !important; border-color: #ffe2a855 !important; }
+.ht-song-list strong { font-weight: 500; font-size: 13px; color: #fff1cf; }
+.ht-song-list span, .ht-song-list small { font-size: 11px; color: #b9c6c9; }
+
+/* Thẻ thông tin bài nổi bên phải nốt nhạc */
+.ht-song-card { position: absolute; right: 4%; top: 12%; width: min(340px, 30%); max-height: 74%; display: flex; flex-direction: column; z-index: 2; transform-origin: left center; transition: transform .2s ease-out; animation: ht-rise .4s ease-out both; }
+.ht-song-card h2 { margin: 0 0 10px; font: 400 24px 'Libre Caslon Display', serif; color: #ffe7b5; }
+.ht-song-card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0 0 10px; font-size: 12px; }
+.ht-song-card dt { color: #c9b98c; }
+.ht-song-card dd { margin: 0; color: #f3ead2; }
+.ht-lyrics-head { display: flex; justify-content: space-between; align-items: center; min-height: 28px; }
+.ht-lyrics-head small { color: #c9b98c; font-size: 11px; }
+.ht-lyrics { flex: 1; overflow-y: auto; margin: 6px 0; white-space: pre-wrap; font: 13px/1.75 'Be Vietnam Pro', sans-serif; color: #efe6cc; }
+.ht-lyrics-edit { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.ht-lyrics-edit textarea { flex: 1; min-height: 200px; line-height: 1.7; }
+.ht-lyrics-edit div { display: flex; gap: 6px; }
+.ht-link { align-self: flex-start; background: none !important; border: 0 !important; padding: 4px 0 !important; color: #c9b98c !important; text-decoration: underline; }
+
+/* Bảng làm việc bắn ra từ nốt nhạc */
+.ht-panels { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.ht-panel { pointer-events: auto; position: absolute; top: 72px; bottom: 6%; overflow-y: auto; animation: ht-burst .5s cubic-bezier(.2,1.3,.4,1) both; }
+.ht-panel-srt { left: 3%; width: min(560px, 40%); transform-origin: right center; }
+.ht-panel audio { width: 100%; height: 34px; margin-bottom: 6px; }
+@keyframes ht-burst { from { opacity: 0; transform: perspective(1200px) translateX(30%) scale(.4) rotateY(40deg); } }
+.mini-apps.ht-embedded { display: block; min-height: 0; height: auto; color: inherit; }
+.ht-embedded .cue-list li { grid-template-columns: auto 82px 82px 1fr auto auto; }
+
+.ht-note-fallback { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border-radius: 50%; font-size: 64px; color: #ffe7b5; background: radial-gradient(circle, #ffd59a66, transparent 70%); border: 0; z-index: 1; }
+
+@media (max-width: 900px) {
+  .ht-song-card { position: absolute; left: 4%; right: 4%; width: auto; top: auto; bottom: 14%; max-height: 40%; }
+  .ht-panel-srt { left: 2%; right: 2%; width: auto; }
+  .ht-filters { grid-template-columns: 1fr 1fr; }
+  .ht-choice { flex-direction: column; gap: 16px; }
+}
+
+/* Cảnh mở màn: video vòng phủ kín gian phòng, nhấp hoặc bấm phím thì tan dần */
+.ht-intro { position: absolute; inset: 0; z-index: 50; background: #04080d; cursor: pointer; transition: opacity .7s ease, filter .7s ease; }
+.ht-intro video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ht-intro.leaving { opacity: 0; filter: blur(6px) brightness(1.3); pointer-events: none; }
+.ht-intro-hint { position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); padding: 8px 18px; border-radius: 999px; font: 400 14px 'Be Vietnam Pro', sans-serif; letter-spacing: .4px;
+  color: #fff3d6; background: #06101a66; border: 1px solid #ffe2a855; text-shadow: 0 0 12px #ffd59a; backdrop-filter: blur(4px); animation: ht-intro-hint 2.6s ease-in-out infinite; }
+@keyframes ht-intro-hint { 50% { opacity: .45; } }

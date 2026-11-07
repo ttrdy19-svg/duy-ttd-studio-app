@@ -1,0 +1,97 @@
+/* Bàn nhạc · cùng bảng màu với Họa thất */
+.mini-apps { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 0; height: 100%; min-height: 640px; color: #e6e9df; font-family: 'Be Vietnam Pro', sans-serif; font-size: 12px; }
+.mini-apps.unavailable { display: flex; align-items: center; justify-content: center; color: #a5b7b9; }
+.mini-apps button { border: 1px solid #acc5b638; border-radius: 6px; background: #adc0ad0b; padding: 8px 12px; color: #dce6da; font: inherit; font-size: 11px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.mini-apps button:hover:not(:disabled) { background: #b9c5ad1c; border-color: #e1c99088; }
+.mini-apps button:disabled { opacity: .4; cursor: default; }
+.mini-apps button.primary { border-color: #d2bb76; background: #c4b66c22; color: #f0dfba; }
+.mini-apps button.icon { padding: 6px 8px; }
+.mini-apps input:not([type=checkbox]):not([type=color]), .mini-apps textarea, .mini-apps select { width: 100%; padding: 8px 10px; border: 1px solid #9fb8af38; border-radius: 5px; background: #0c2029; color: #e2e9df; font: inherit; font-size: 12px; box-sizing: border-box; }
+.mini-apps textarea { resize: vertical; line-height: 1.6; }
+.mini-apps label { display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #bbc8bc; }
+.mini-apps label.check { flex-direction: row; align-items: center; gap: 7px; }
+.mini-apps small { color: #9bb2ae; font-size: 10px; line-height: 1.6; }
+
+.song-list { display: flex; flex-direction: column; border-right: 1px solid #afc6cf1a; background: #0a1a21; min-height: 0; }
+.song-list header { display: flex; flex-direction: column; gap: 9px; padding: 14px; border-bottom: 1px solid #afc6cf1a; }
+.song-tabs { display: flex; gap: 6px; }
+.song-tabs button { flex: 1; }
+.song-tabs button[aria-selected=true], .mini-tabs button[aria-selected=true] { border-color: #d2bb76; background: #c4b66c14; color: #f0dfba; }
+.song-tabs small { color: #c7b884; }
+.song-search { flex-direction: row !important; align-items: center; gap: 0 !important; position: relative; }
+.song-search svg { position: absolute; left: 10px; color: #8c9fa8; }
+.song-search input { padding-left: 30px !important; }
+.song-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.song-actions button { flex: 1; }
+.song-list ul { list-style: none; margin: 0; padding: 6px; overflow-y: auto; flex: 1; }
+.song-list li button { width: 100%; flex-direction: column; align-items: flex-start; text-align: left; gap: 3px; border-color: transparent; background: transparent; padding: 9px 10px; }
+.song-list li button.active { border-color: #d2bb76; background: #c4b66c14; }
+.song-list li strong { font-weight: 500; font-size: 12px; color: #e6e2cf; }
+.song-list li span { color: #8fa5a6; font-size: 10px; }
+.song-flags { display: flex; flex-wrap: wrap; gap: 4px; }
+.song-flags i { font-style: normal; font-size: 9px; padding: 1px 6px; border-radius: 9px; border: 1px solid #9fb8af30; color: #9bb2ae; }
+.song-flags i.ok { border-color: #6fbf9a55; color: #8fd8b4; }
+.song-flags i.warn { border-color: #d98b6a66; color: #e8a68a; }
+.song-empty { color: #8fa5a6; padding: 14px; line-height: 1.7; }
+
+.mini-workspace { padding: 22px 26px; overflow-y: auto; min-width: 0; margin: 0; max-width: none; }
+.mini-welcome { max-width: 560px; margin: 60px auto; text-align: center; line-height: 1.9; color: #a5b7b9; }
+.mini-welcome h2, .mini-project h2 { font: 400 30px 'Libre Caslon Display', serif; color: #f0dfba; margin: 0 0 6px; }
+.mini-project { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.mini-audio { width: 100%; margin: 14px 0; height: 36px; }
+.mini-tabs { display: flex; flex-direction: row; gap: 6px; margin-bottom: 16px; border-bottom: 1px solid #afc6cf1a; padding-bottom: 12px; }
+.mini-toolbar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+.mini-toolbar .grow { flex: 1; }
+.apps-note { margin: 8px 0; padding: 8px 11px; border-radius: 5px; background: #9ad2bd09; color: #aebfb7; line-height: 1.7; font-size: 11px; }
+.apps-note.ok { background: #6fbf9a14; color: #a8dcc2; }
+.apps-note.warn { background: #d9a86a14; color: #e6c38f; }
+.apps-error { margin: 8px 0; padding: 8px 11px; border-radius: 5px; background: #d96a6a1a; color: #f0a7a0; font-size: 11px; line-height: 1.6; }
+
+.lyrics-editor { margin: 10px 0; display: flex; flex-direction: column; gap: 6px; }
+.subtitle-style { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin: 12px 0; padding: 12px; border: 1px solid #afc6cf1a; border-radius: 6px; }
+.subtitle-style label { width: auto; min-width: 110px; }
+.subtitle-style input[type=number] { width: 80px; }
+.cue-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; counter-reset: cue; }
+.cue-list li { display: grid; grid-template-columns: auto 92px 92px 1fr auto auto; gap: 5px; align-items: center; padding: 3px 4px; border-radius: 5px; }
+.cue-list li.playing { background: #c4b66c18; }
+.cue-list input.time { font-variant-numeric: tabular-nums; font-size: 11px !important; padding: 6px 7px !important; }
+
+.image-brief { display: flex; flex-direction: column; gap: 10px; }
+.image-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.image-key { display: grid; grid-template-columns: 1fr auto auto; gap: 6px; align-items: center; }
+.image-key small { grid-column: 1 / -1; }
+.image-run { display: flex; align-items: center; gap: 10px; padding: 10px 12px; margin: 10px 0; border: 1px solid #d2bb7655; border-radius: 6px; color: #f0dfba; }
+.image-run button { margin-left: auto; }
+.spinner { width: 13px; height: 13px; border: 2px solid #d2bb7655; border-top-color: #d2bb76; border-radius: 50%; animation: mini-spin 1s linear infinite; }
+@keyframes mini-spin { to { transform: rotate(360deg); } }
+.candidate-round h4 { font-weight: 500; font-size: 11px; color: #9bb2ae; margin: 18px 0 8px; }
+.candidate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.candidate-grid figure, .thumb-grid figure { margin: 0; border: 1px solid #afc6cf1a; border-radius: 7px; overflow: hidden; background: #0c2029; }
+.candidate-grid figure.chosen { border-color: #d2bb76; box-shadow: 0 0 0 1px #d2bb76; }
+.candidate-grid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.candidate-grid figcaption { display: flex; align-items: center; gap: 6px; padding: 7px; }
+.candidate-grid figcaption small { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.thumb-panel { margin-top: 26px; padding-top: 18px; border-top: 1px solid #afc6cf1a; }
+.thumb-panel h3 { font-weight: 500; font-size: 14px; color: #d6d9c1; margin: 0 0 6px; }
+.thumb-grid { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; margin-top: 12px; }
+.thumb-grid figure { position: relative; height: 220px; }
+.thumb-grid img { height: 100%; width: 100%; object-fit: cover; display: block; }
+.thumb-grid figcaption { position: absolute; top: 6px; left: 6px; font-size: 10px; padding: 2px 7px; border-radius: 9px; background: #000a; color: #f0dfba; }
+
+@media (max-width: 900px) {
+  .mini-apps { grid-template-columns: 1fr; }
+  .song-list { max-height: 45vh; border-right: 0; border-bottom: 1px solid #afc6cf1a; }
+  .cue-list li { grid-template-columns: auto 80px 80px 1fr; }
+  .cue-list li button:nth-last-child(-n+2) { display: none; }
+}
+.thumb-grid figure.misspelled { border-color: #d96a6a88; }
+.thumb-grid figcaption b.ok { color: #8fd8b4; font-weight: 500; }
+.thumb-grid figcaption b.bad { color: #f0a7a0; font-weight: 500; }
+.thumb-missing { height: 100%; display: flex; align-items: center; justify-content: center; color: #8fa5a6; }
+.thumb-problem { position: absolute; left: 0; right: 0; bottom: 0; padding: 6px; background: #0a1a21e8; display: flex; flex-direction: column; gap: 5px; }
+.thumb-problem small { color: #f0a7a0; }
+.song-tabs button { padding-inline: 6px; }
+/* Nút Ký âm nhỏ dưới mỗi bài trong kho (không chiếm cả dòng như nút mở bài). */
+.song-list li button.song-kyam { width: auto; flex-direction: row; align-items: center; gap: 5px; margin: 2px 0 6px 10px; padding: 3px 9px; font-size: 11px; border: 1px solid #d2bb7666; color: #e9d9a8; background: #c4b66c10; }
+.song-list li button.song-kyam:hover:not(:disabled) { border-color: #d2bb76; background: #c4b66c24; }
+.apps-notice { margin: 6px 0 0; padding: 6px 9px; border-radius: 7px; background: #1f3a2a; border: 1px solid #4caf7a88; color: #cdeed9; font-size: 11.5px; }
